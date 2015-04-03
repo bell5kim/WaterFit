@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WaterFit</class>
+ <widget class="QMainWindow" name="WaterFit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>958</width>
+    <height>731</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WaterFit</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="textLabelMachine">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>33</y>
+      <width>280</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Machine</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="doneButton">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>583</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Done</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+D</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>661</x>
+      <y>56</y>
+      <width>280</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Main Fit (&amp;1)</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>-1</y>
+        <width>260</width>
+        <height>460</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Energy Spectrum Parameters</string>
+      </property>
+      <widget class="QSlider" name="sliderNorm">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>66</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxNorm">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>66</y>
+         <width>75</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEditEp">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>93</y>
+         <width>70</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxPcon">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>349</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxBval">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>204</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderLval">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>157</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderEmax">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>299</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxEmax">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>299</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderPcon">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>349</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderEmin">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>251</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxPcon">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>328</y>
+         <width>250</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pcon: Ratio of Electron Contamination</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxEmax">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>278</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Emax: Higher Energy Limit (MeV)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxEmin">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>251</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxBval">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>183</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>B: Broad Spectrum Parameter</string>
+       </property>
+       <property name="shortcut">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxEmin">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>230</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Emin: Lower Energy Limit (MeV)</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderBval">
+       <property name="geometry">
+        <rect>
+         <x>88</x>
+         <y>204</y>
+         <width>160</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>50</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1000</number>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="floatSpinBoxLval">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>157</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxLval">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>136</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L: Low Energy Spectrum Parameter</string>
+       </property>
+       <property name="shortcut">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxNorm">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>45</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Norm: Normalization Factor</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEditEmean">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>108</x>
+         <y>114</y>
+         <width>70</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelEmean">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>114</y>
+         <width>85</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Emean (MeV):</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelEp">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>93</y>
+         <width>60</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ep (MeV):</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEditE">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>111</x>
+         <y>22</y>
+         <width>61</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelAval">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>382</y>
+         <width>171</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>A: Flattening Filter Absorption</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEditAval">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>189</x>
+         <y>382</y>
+         <width>61</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxFS2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>420</y>
+         <width>240</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Plus 2nd FS</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelE">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>22</y>
+         <width>90</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Energy (MeV):</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>More... (&amp;2)</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxE">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>261</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Electron Contamination</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditEe">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>30</y>
+         <width>50</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEditRe">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>60</y>
+         <width>50</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelRe">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>172</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Electron Source Radius (cm):</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelEe">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>180</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Mean Electron Energy (MeV):</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="textLabelRunE">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>150</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Recalcule Electron PDD:</string>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonRunE">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>110</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Run &amp;Econ</string>
+       </property>
+       <property name="shortcut">
+        <string>Alt+E</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QCheckBox" name="checkBoxVersion">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>240</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Use Old Version</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBoxFS">
+      <property name="geometry">
+       <rect>
+        <x>166</x>
+        <y>340</y>
+        <width>100</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="textLabelEmean_2">
+      <property name="geometry">
+       <rect>
+        <x>19</x>
+        <y>341</y>
+        <width>120</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fit this FS ONLY:</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>390</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remove Current Reference Spectrum</string>
+      </property>
+      <property name="shortcut">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="textLabelTitle">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>10</y>
+      <width>280</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;h3&gt;&lt;b&gt;Photon Energy Spectrum Modeling&lt;/b&gt;&lt;/h3&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resetButton">
+    <property name="geometry">
+     <rect>
+      <x>722</x>
+      <y>583</y>
+      <width>58</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Reset</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+R</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fitButton">
+    <property name="geometry">
+     <rect>
+      <x>785</x>
+      <y>550</y>
+      <width>90</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Fit</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+F</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="spectButton">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>550</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hide &amp;Spectrum</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+S</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="guessButton">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>583</y>
+      <width>58</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Guess</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+G</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="interruptButton">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>550</y>
+      <width>60</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Cancel</string>
+    </property>
+    <property name="shortcut">
+     <string>Alt+C</string>
+    </property>
+   </widget>
+   <widget class="MyPlot2D" name="qwtPlot" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>640</width>
+      <height>580</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="MyPlot2D" name="qwtPlotSpect" native="true">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>340</width>
+      <height>250</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>958</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyPlot2D</class>
+   <extends>QWidget</extends>
+   <header>myplot2d.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
